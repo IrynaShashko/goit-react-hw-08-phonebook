@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/26.8eaf411c.chunk.js","mappings":"8JAQA,UARqB,WACnB,OACE,0BACE,0CAGL,C","sources":["pages/ContactsPage/ContactsPage.jsx"],"sourcesContent":["const ContactsPage = () => {\n  return (\n    <div>\n      <h1>ContactsPage</h1>\n    </div>\n  );\n};\n\nexport default ContactsPage;\n"],"names":[],"sourceRoot":""}
