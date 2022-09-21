@@ -1,21 +1,19 @@
-import { Container, Ul, Li, NavLinkStyle } from './Navbar.styled';
+import { Link } from 'react-router-dom';
+
+import NavbarMenu from '../../components/Navbar/NavbarMenu/NavbarMenu';
+import NavbarAuth from '../../components/Navbar/NavbarAuth/NavbarAuth';
+
+import styles from '../Navbar/navbar.module.css';
 
 const Navbar = () => {
   return (
-    <Container>
-      <Ul>
-        <Li>
-          <NavLinkStyle to="/">Home</NavLinkStyle>
-        </Li>
-        <Li>
-          <NavLinkStyle to="/contacts">Contacts</NavLinkStyle>
-        </Li>
-        <Li>
-          <NavLinkStyle to="/register">Register</NavLinkStyle> |
-          <NavLinkStyle to="/login">Login</NavLinkStyle>
-        </Li>
-      </Ul>
-    </Container>
+    <div className={styles.wrapper}>
+      <Link className={styles.logo} to="/">
+        Logo
+      </Link>
+      <NavbarMenu />
+      <NavbarAuth />
+    </div>
   );
 };
 

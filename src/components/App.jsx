@@ -1,12 +1,15 @@
-import styles from './app.module.css';
-import Navbar from './Navbar/Navbar';
-import PhoneBookRoutes from '../PhoneBookRoutes';
+import Navbar from '../components/Navbar/Navbar';
+import UserRoutes from '../UserRoutes';
 
-export const App = () => {
+import '../shared/styles/styles.css';
+
+function App() {
   return (
-    <div className={styles.wrapper}>
+    <div className="App">
       <Navbar />
-      <PhoneBookRoutes />
+      <UserRoutes />
     </div>
   );
-};
+}
+
+export default App;
