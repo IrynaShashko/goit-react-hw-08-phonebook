@@ -17,7 +17,7 @@ const LoginPage = () => {
   };
 
   if (isLogin) {
-    return <Navigate to="/my-books" />;
+    return <Navigate to="/contacts" />;
   }
 
   return (

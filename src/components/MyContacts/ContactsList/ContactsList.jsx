@@ -1,15 +1,16 @@
 import styles from './contacts-list.module.css';
 
 const ContactList = ({ contacts, removeContact }) => {
-  const elements = contacts.map(({ id, name, email }) => (
+  console.log('contacts', contacts);
+  const elements = contacts?.map(({ id, name, email }) => (
     <li key={id} className={styles.item}>
-      {name}. Автор: {email}.
+      {name} {email}.
       <button
         type="button"
         className={styles.btn}
         onClick={() => removeContact(id)}
       >
-        Удалить
+        Delete
       </button>
     </li>
   ));

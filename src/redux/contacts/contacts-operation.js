@@ -31,8 +31,11 @@ const isDublicate = ({ name, email }, contacts) => {
 export const addContact = createAsyncThunk(
   'contacts/add',
   async (data, { rejectWithValue }) => {
+    console.log('data in add', data);
     try {
       const result = await api.addContact(data);
+      console.log('data in add', data);
+      console.log('result in add', result);
       return result;
     } catch (error) {
       return rejectWithValue(error);

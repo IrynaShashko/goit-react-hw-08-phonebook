@@ -4,10 +4,10 @@ export const getFilteredContacts = ({ contacts, filter }) => {
   if (!filter) {
     return contacts.items;
   }
-  const normalizedFilter = filter.toLowerCase();
-  const result = contacts.items.filter(({ name, email }) => {
-    const normalizedName = name.toLowerCase();
-    const normalizedEmail = email.toLowerCase();
+  const normalizedFilter = filter?.toLowerCase();
+  const result = contacts?.items?.filter(({ name, email }) => {
+    const normalizedName = name?.toLowerCase();
+    const normalizedEmail = email?.toLowerCase();
     return (
       normalizedName.includes(normalizedFilter) ||
       normalizedEmail.includes(normalizedFilter)

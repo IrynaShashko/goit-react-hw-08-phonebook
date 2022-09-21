@@ -40,18 +40,18 @@ const MyContacts = () => {
 
   return (
     <div className={styles.contacts}>
-      <Container title="Добавить книгу">
+      <Container title="Add contacts">
         <FormAddContacts onSubmit={onAddContact} />
       </Container>
-      <Container title="Список книг">
+      <Container title="Contacts list">
         <input
           onChange={onSetFilter}
           value={filter}
           name="filter"
           type="text"
-          placeholder="Введите название "
+          placeholder="Enter name "
         />
-        <ContactList books={contacts} removeBook={onRemoveContact} />
+        <ContactList contacts={contacts} removeContact={onRemoveContact} />
       </Container>
     </div>
   );

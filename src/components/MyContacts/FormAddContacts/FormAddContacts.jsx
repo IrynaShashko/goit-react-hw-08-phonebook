@@ -10,7 +10,9 @@ const FormAddContact = ({ onSubmit }) => {
     onSubmit,
   });
 
-  const { name, email, favorite } = state;
+  const { name, number } = state;
+  console.log('name', name);
+  console.log('email', number);
 
   return (
     <form action="" onSubmit={handleSubmit}>
@@ -29,26 +31,15 @@ const FormAddContact = ({ onSubmit }) => {
           />
         </div>
         <label className={styles.label} htmlFor="">
-          Email:
+          Number:
         </label>
         <input
-          value={email}
-          name="email"
+          value={number}
+          name="number"
           onChange={handleChange}
           className={styles.input}
-          type="text"
-          placeholder="Type email..."
-        />
-      </div>
-      <div className={styles.group}>
-        <label className={styles.label} htmlFor="">
-          Favorite:
-        </label>
-        <input
-          name="favorite"
-          checked={favorite}
-          onChange={handleChange}
-          type="checkbox"
+          type="number"
+          placeholder="Type number..."
         />
       </div>
       <div className={styles.group}>
