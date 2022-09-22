@@ -16,7 +16,6 @@ const RegisterPage = () => {
 
   return (
     <div className="container">
-      <h2>Register Page</h2>
       <RegisterForm onSubmit={onRegister} />
       {status && <p style={{ color: 'red' }}>{message}</p>}
     </div>

@@ -16,7 +16,6 @@ const LoginPage = () => {
 
   return (
     <div className="container">
-      <h2>Login Page</h2>
       <LoginForm onSubmit={onLogin} />
       {status && <p style={{ color: 'red' }}>{message}</p>}
     </div>
