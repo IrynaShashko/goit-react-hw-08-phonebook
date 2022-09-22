@@ -11,7 +11,6 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
   const { status, message } = useSelector(getAuthError);
   const isLogin = useSelector(isAuth);
-  console.log('isLogin', isLogin);
 
   const onRegister = data => {
     dispatch(signup(data));

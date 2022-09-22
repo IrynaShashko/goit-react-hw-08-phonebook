@@ -30,7 +30,7 @@ const RegisterForm = ({ onSubmit }) => {
       </div>
       <div className={styles.group}>
         <label className={styles.label} htmlFor="">
-          Email пользователя:
+          Email:
         </label>
         <input
           value={email}
@@ -38,12 +38,12 @@ const RegisterForm = ({ onSubmit }) => {
           onChange={handleChange}
           className={styles.input}
           type="email"
-          placeholder="Введите email пользователя"
+          placeholder="Enter email"
         />
       </div>
       <div className={styles.group}>
         <label className={styles.label} htmlFor="">
-          Пароль пользователя:
+          Password:
         </label>
         <input
           value={password}
@@ -51,11 +51,11 @@ const RegisterForm = ({ onSubmit }) => {
           onChange={handleChange}
           className={styles.input}
           type="password"
-          placeholder="Введите пароль пользователя"
+          placeholder="Enter password"
         />
       </div>
       <div className={styles.group}>
-        <button type="submit">Регистрация</button>
+        <button type="submit">Sign up</button>
       </div>
     </form>
   );

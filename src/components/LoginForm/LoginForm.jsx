@@ -1,6 +1,6 @@
 import useForm from '../../shared/hooks/useForm';
 
-import styles from './login-form.module.css';
+// import styles from '../LoginForm/';
 
 import { initialState } from './initialState';
 
@@ -14,34 +14,28 @@ const LoginForm = ({ onSubmit }) => {
 
   return (
     <form action="" onSubmit={handleSubmit}>
-      <div className={styles.group}>
-        <label className={styles.label} htmlFor="">
-          Email пользователя:
-        </label>
+      <div>
+        <label htmlFor="">Email:</label>
         <input
           value={email}
           name="email"
           onChange={handleChange}
-          className={styles.input}
           type="email"
-          placeholder="Введите email пользователя"
+          placeholder="Enter email"
         />
       </div>
-      <div className={styles.group}>
-        <label className={styles.label} htmlFor="">
-          Пароль пользователя:
-        </label>
+      <div>
+        <label htmlFor="">Password:</label>
         <input
           value={password}
           name="password"
           onChange={handleChange}
-          className={styles.input}
           type="password"
-          placeholder="Введите пароль пользователя"
+          placeholder="Enter your password"
         />
       </div>
-      <div className={styles.group}>
-        <button type="submit">Регистрация</button>
+      <div>
+        <button type="submit">Log in</button>
       </div>
     </form>
   );

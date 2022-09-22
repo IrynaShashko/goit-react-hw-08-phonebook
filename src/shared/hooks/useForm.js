@@ -17,8 +17,6 @@ const useForm = ({ initialState, onSubmit }) => {
     onSubmit({ ...state });
     setState({ ...initialState });
   };
-  console.log('state', state);
-  console.log('initialState', initialState);
   return { state, setState, handleChange, handleSubmit };
 };
 
