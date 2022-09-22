@@ -11,8 +11,6 @@ const FormAddContact = ({ onSubmit }) => {
   });
 
   const { name, number } = state;
-  console.log('name', name);
-  console.log('email', number);
 
   return (
     <form action="" onSubmit={handleSubmit}>

@@ -14,14 +14,13 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-const isDublicate = ({ name, email }, contacts) => {
-  const normalizedTitle = name.toLowerCase();
-  const normalizedAuthor = email.toLowerCase();
+const isDublicate = ({ name, number }, contacts) => {
+  const normalizedTitle = name?.toLowerCase();
 
-  const result = contacts.find(item => {
+  const result = contacts?.find(item => {
     return (
-      normalizedTitle === item.name.toLowerCase() &&
-      normalizedAuthor === item.email.toLowerCase()
+      normalizedTitle === item?.name.toLowerCase() &&
+      number === item?.number.toLowerCase()
     );
   });
 
@@ -31,11 +30,8 @@ const isDublicate = ({ name, email }, contacts) => {
 export const addContact = createAsyncThunk(
   'contacts/add',
   async (data, { rejectWithValue }) => {
-    console.log('data in add', data);
     try {
       const result = await api.addContact(data);
-      console.log('data in add', data);
-      console.log('result in add', result);
       return result;
     } catch (error) {
       return rejectWithValue(error);

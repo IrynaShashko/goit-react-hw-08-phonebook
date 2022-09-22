@@ -16,7 +16,7 @@ const RegisterForm = ({ onSubmit }) => {
     <form action="" onSubmit={handleSubmit}>
       <div className={styles.group}>
         <label className={styles.label} htmlFor="">
-          Имя пользователя:
+          Name:
         </label>
         <input
           value={name}

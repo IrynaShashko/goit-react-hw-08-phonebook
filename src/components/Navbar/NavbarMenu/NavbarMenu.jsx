@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { isAuth } from 'redux/auth/auth-selectors';
+import useAuth from 'shared/hooks/useAuth';
 import styles from '../NavbarMenu/navbar-menu.module.css';
 
 import items from './items';
@@ -13,7 +12,7 @@ const getClassName = ({ isActive }) => {
 };
 
 const NavbarMenu = () => {
-  const isLogin = useSelector(isAuth);
+  const isLogin = useAuth();
   const elements = items?.map(({ id, to, text }) => (
     <li key={id}>
       <NavLink className={getClassName} to={to}>
