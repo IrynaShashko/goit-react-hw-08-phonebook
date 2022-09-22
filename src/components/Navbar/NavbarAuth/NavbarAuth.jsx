@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
+
 import styles from '../NavbarAuth/navbar-auth.module.css';
 
 const NavbarAuth = () => {
   return (
-    <div className={styles.wrapper}>
+    <div>
       <NavLink to="/login" className={styles.link}>
         Login
       </NavLink>{' '}

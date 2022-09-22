@@ -5,16 +5,16 @@ import NavbarAuth from '../../components/Navbar/NavbarAuth/NavbarAuth';
 import UserMenu from './UserMenu';
 import useAuth from 'shared/hooks/useAuth';
 import { FaBookOpen } from 'react-icons/fa';
-import styles from '../Navbar/navbar.module.css';
+// import styles from '../Navbar/navbar.module.css';
 
-const Navbar = () => {
+const Appbar = () => {
   const isLogin = useAuth();
   return (
     <div>
       <header>
         <nav>
-          <div className={styles.wrapper}>
-            <Link className={styles.logo} to="/">
+          <div>
+            <Link to="/">
               <FaBookOpen />
               PHONEBOOK
             </Link>
@@ -27,4 +27,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Appbar;

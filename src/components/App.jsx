@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import Navbar from '../components/Navbar/Navbar';
+import Appbar from '../components/Navbar/Appbar';
 import UserRoutes from '../UserRoutes';
 
 import { current } from 'redux/auth/auth-operation';
@@ -14,7 +14,7 @@ function App() {
   }, [dispatch]);
   return (
     <div className="App">
-      <Navbar />
+      <Appbar />
       <UserRoutes />
     </div>
   );
