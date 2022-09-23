@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 
 import { signup } from '../../redux/auth/auth-operation';
@@ -13,11 +13,20 @@ const RegisterPage = () => {
   const onRegister = data => {
     dispatch(signup(data));
   };
+  Notify.init({
+    width: '200px',
+    position: 'center-top',
+    distance: '50px',
+    opacity: 1,
+    borderRadius: '4px',
+    timeout: 1000,
+    // ...
+  });
 
   return (
     <div className="container">
       <RegisterForm onSubmit={onRegister} />
-      {status && <p style={{ color: 'red' }}>{message}</p>}
+      {status && Notify.warning(`${message}`)}
     </div>
   );
 };

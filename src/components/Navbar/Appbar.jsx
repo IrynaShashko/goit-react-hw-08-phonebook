@@ -1,29 +1,27 @@
-import { Link } from 'react-router-dom';
-
 import NavbarMenu from '../../components/Navbar/NavbarMenu/NavbarMenu';
 import NavbarAuth from '../../components/Navbar/NavbarAuth/NavbarAuth';
-import UserMenu from './UserMenu';
+import UserMenu from '../../components/Navbar/UserMenu/UserMenu';
 import useAuth from 'shared/hooks/useAuth';
-import { FaBookOpen } from 'react-icons/fa';
-import styles from '../Navbar/appbar.module.css';
+import { ImAddressBook } from 'react-icons/im';
+import { Container, LinkStyle } from './Appbar.styled';
 
 const Appbar = () => {
   const isLogin = useAuth();
   return (
-    <div>
-      <header>
-        <nav>
-          <div className={styles.wrapper}>
-            <Link className={styles.logo} to="/">
-              <FaBookOpen />
-              PHONEBOOK
-            </Link>
-            {isLogin && <NavbarMenu />}
-            {isLogin ? <UserMenu /> : <NavbarAuth />}
+    <header>
+      <nav>
+        <Container>
+          <div>
+            <LinkStyle to="/">
+              <ImAddressBook />
+              HOME
+            </LinkStyle>
           </div>
-        </nav>
-      </header>
-    </div>
+          <div>{isLogin && <NavbarMenu />}</div>
+          <div>{isLogin ? <UserMenu /> : <NavbarAuth />}</div>
+        </Container>
+      </nav>
+    </header>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import LoginForm from '../../components/LoginForm/LoginForm';
 
@@ -13,12 +14,22 @@ const LoginPage = () => {
   const onLogin = data => {
     dispatch(login(data));
   };
-
+  Notify.init({
+    width: '200px',
+    position: 'center-top',
+    distance: '50px',
+    opacity: 1,
+    borderRadius: '4px',
+    timeout: 1000,
+    // ...
+  });
   return (
-    <div className="container">
-      <LoginForm onSubmit={onLogin} />
-      {status && <p style={{ color: 'red' }}>{message}</p>}
-    </div>
+    <main>
+      <section>
+        <LoginForm onSubmit={onLogin} />
+        {status && Notify.warning(`${message}`)}
+      </section>
+    </main>
   );
 };
 

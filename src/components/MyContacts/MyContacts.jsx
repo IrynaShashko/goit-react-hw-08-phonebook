@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { TextField } from '@mui/material';
 
-import Container from './Container';
+import { Container } from '../LoginForm/LoginForm.styled';
 import FormAddContacts from './FormAddContacts/FormAddContacts';
 import ContactList from './ContactsList/ContactsList';
 
@@ -13,8 +14,6 @@ import {
 import { setFilter } from '../../redux/filter/filter-actions';
 import { getFilteredContacts } from 'redux/contacts/contacts-selectors';
 import { getFilter } from '../../redux/filter/filter-selectors';
-
-import styles from './my-contacts.module.css';
 
 const MyContacts = () => {
   const contacts = useSelector(getFilteredContacts);
@@ -39,21 +38,27 @@ const MyContacts = () => {
   };
 
   return (
-    <div className={styles.contacts}>
-      <Container title="Add contacts">
+    <Container>
+      <div>
         <FormAddContacts onSubmit={onAddContact} />
-      </Container>
-      <Container title="Contacts list">
-        <input
+      </div>
+      <div>
+        <TextField
           onChange={onSetFilter}
           value={filter}
           name="filter"
           type="text"
           placeholder="Enter name "
+          label="Find"
+          multiline="controlled"
+          size="small"
+          margin="normal"
+          autoComplete="current-filter"
+          fullWidth
         />
         <ContactList contacts={contacts} removeContact={onRemoveContact} />
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

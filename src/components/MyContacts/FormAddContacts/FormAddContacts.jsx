@@ -1,6 +1,6 @@
 import useForm from '../../../shared/hooks/useForm';
-
-import styles from './form-add-book.module.css';
+import { Form, H2, Button } from '../../LoginForm/LoginForm.styled';
+import { TextField } from '@mui/material';
 
 import { initialState } from './initialState';
 
@@ -13,37 +13,40 @@ const FormAddContact = ({ onSubmit }) => {
   const { name, number } = state;
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <div className={styles.group}>
-        <div className={styles.group}>
-          <label className={styles.label} htmlFor="">
-            Name:
-          </label>
-          <input
-            value={name}
-            name="name"
-            onChange={handleChange}
-            className={styles.input}
-            type="text"
-            placeholder="Type name..."
-          />
-        </div>
-        <label className={styles.label} htmlFor="">
-          Number:
-        </label>
-        <input
+    <div>
+      <Form action="" onSubmit={handleSubmit}>
+        <H2>Add contact</H2>
+        <TextField
+          value={name}
+          name="name"
+          onChange={handleChange}
+          type="text"
+          placeholder="Type name..."
+          label="Name"
+          multiline="controlled"
+          size="small"
+          margin="normal"
+          fullWidth
+          required
+        />
+        <TextField
           value={number}
           name="number"
           onChange={handleChange}
-          className={styles.input}
           type="number"
           placeholder="Type number..."
+          label="Number"
+          multiline="controlled"
+          size="small"
+          margin="normal"
+          fullWidth
+          required
         />
-      </div>
-      <div className={styles.group}>
-        <button type="submit">Add</button>
-      </div>
-    </form>
+        <div>
+          <Button type="submit">Add</Button>
+        </div>
+      </Form>
+    </div>
   );
 };
 

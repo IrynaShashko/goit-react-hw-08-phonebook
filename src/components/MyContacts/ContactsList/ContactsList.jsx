@@ -1,20 +1,22 @@
-import styles from './contacts-list.module.css';
+import { FiTrash2 } from 'react-icons/fi';
+import { List, ListItem, ListItemText, Divider } from '@mui/material';
+
+import { Button } from './ContactsList.styled';
 
 const ContactList = ({ contacts, removeContact }) => {
   const elements = contacts?.map(({ id, name, number }) => (
-    <li key={id} className={styles.item}>
-      {name} {number}
-      <button
-        type="button"
-        className={styles.btn}
-        onClick={() => removeContact(id)}
-      >
-        Delete
-      </button>
-    </li>
+    <ListItem li key={id} divider>
+      <Divider light />
+      <ListItemText>
+        {name} {number}
+      </ListItemText>
+      <Button type="button" onClick={() => removeContact(id)}>
+        <FiTrash2 />
+      </Button>
+    </ListItem>
   ));
 
-  return <ul>{elements}</ul>;
+  return <List component="ul">{elements}</List>;
 };
 
 export default ContactList;

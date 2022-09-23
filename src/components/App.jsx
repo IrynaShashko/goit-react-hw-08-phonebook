@@ -5,18 +5,20 @@ import Appbar from '../components/Navbar/Appbar';
 import UserRoutes from '../UserRoutes';
 
 import { current } from 'redux/auth/auth-operation';
-import '../shared/styles/styles.css';
+// import styles from '../shared/styles/styles.css';
+import { AppContainer } from './App.styled';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(current());
   }, [dispatch]);
+
   return (
-    <div className="App">
+    <AppContainer>
       <Appbar />
       <UserRoutes />
-    </div>
+    </AppContainer>
   );
 }
 

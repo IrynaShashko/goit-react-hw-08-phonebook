@@ -1,7 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import * as api from '../../shared/api/contacts';
-
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+Notify.init({
+  width: '200px',
+  position: 'center-top',
+  distance: '50px',
+  opacity: 1,
+  borderRadius: '4px',
+  timeout: 1000,
+  // ...
+});
 export const fetchContacts = createAsyncThunk(
   'contacts/fetch',
   async (_, thunkAPI) => {
@@ -14,15 +23,13 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-const isDublicate = ({ name, number }, contacts) => {
-  const normalizedTitle = name?.toLowerCase();
+const isDublicate = ({ name }, contacts) => {
+  const normalizedName = name?.toLowerCase();
 
   const result = contacts?.find(item => {
-    return (
-      normalizedTitle === item?.name.toLowerCase() &&
-      number === item?.number.toLowerCase()
-    );
+    return normalizedName === item?.name.toLowerCase();
   });
+  console.log('result', result);
 
   return Boolean(result);
 };
@@ -40,8 +47,11 @@ export const addContact = createAsyncThunk(
   {
     condition: (data, { getState }) => {
       const { contacts } = getState();
-      if (isDublicate(data, contacts.items)) {
-        alert(`${data.name} ${data.email} is alredy exist`);
+      console.log('data', data);
+      const result = isDublicate(data, contacts.items);
+      console.log('result', result);
+      if (result) {
+        Notify.warning(`${data.name} ${data.number} is alredy exist`);
         return false;
       }
     },

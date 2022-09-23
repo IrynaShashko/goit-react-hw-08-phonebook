@@ -4,9 +4,9 @@ const Loader = () => {
   return (
     <ThreeDots
       wrapperStyle={{ justifyContent: 'center' }}
-      height="150"
-      width="150"
-      color="#3879B3"
+      height="100"
+      width="100"
+      color="#1976d2"
     />
   );
 };

@@ -3,10 +3,12 @@ import ContactList from 'components/MyContacts/ContactsList/ContactsList';
 
 const MyContactsPage = () => {
   return (
-    <div className="container">
-      <MyContacts />
-      <ContactList />
-    </div>
+    <main>
+      <section>
+        <MyContacts />
+        <ContactList />
+      </section>
+    </main>
   );
 };
 
