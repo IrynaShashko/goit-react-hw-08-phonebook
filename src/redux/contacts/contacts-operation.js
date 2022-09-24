@@ -23,11 +23,13 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-const isDublicate = ({ name }, contacts) => {
+const isDublicate = ({ name, number }, contacts) => {
   const normalizedName = name?.toLowerCase();
 
   const result = contacts?.find(item => {
-    return normalizedName === item?.name.toLowerCase();
+    return (
+      normalizedName === item?.name.toLowerCase() && number === item?.number
+    );
   });
   console.log('result', result);
 
