@@ -1,4 +1,5 @@
 import useForm from '../../../shared/hooks/useForm';
+import PropTypes from 'prop-types';
 import { Form, H2, Button } from '../../LoginForm/LoginForm.styled';
 import { TextField } from '@mui/material';
 
@@ -48,6 +49,10 @@ const FormAddContact = ({ onSubmit }) => {
       </Form>
     </div>
   );
+};
+
+FormAddContact.propTypes = {
+  onSubmit: PropTypes.func,
 };
 
 export default FormAddContact;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FiTrash2 } from 'react-icons/fi';
 import { List, ListItem, ListItemText, Divider } from '@mui/material';
 
@@ -17,6 +18,11 @@ const ContactList = ({ contacts, removeContact }) => {
   ));
 
   return <List component="ul">{elements}</List>;
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.array,
+  removeContact: PropTypes.func,
 };
 
 export default ContactList;

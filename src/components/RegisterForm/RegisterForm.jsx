@@ -1,4 +1,5 @@
 import useForm from '../../shared/hooks/useForm';
+import PropTypes from 'prop-types';
 import { Container, Form, H2, P, Button } from '../LoginForm/LoginForm.styled';
 import { TextField } from '@mui/material';
 
@@ -64,6 +65,10 @@ const RegisterForm = ({ onSubmit }) => {
       </Form>
     </Container>
   );
+};
+
+RegisterForm.propTypes = {
+  onSubmit: PropTypes.func,
 };
 
 export default RegisterForm;
