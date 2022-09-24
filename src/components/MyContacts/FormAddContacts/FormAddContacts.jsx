@@ -15,7 +15,7 @@ const FormAddContact = ({ onSubmit }) => {
   return (
     <div>
       <Form action="" onSubmit={handleSubmit}>
-        <H2>Add contact</H2>
+        <H2>Create contact</H2>
         <TextField
           value={name}
           name="name"

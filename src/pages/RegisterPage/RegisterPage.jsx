@@ -19,7 +19,7 @@ const RegisterPage = () => {
     distance: '50px',
     opacity: 1,
     borderRadius: '4px',
-    timeout: 1000,
+    timeout: 3000,
     // ...
   });
 
