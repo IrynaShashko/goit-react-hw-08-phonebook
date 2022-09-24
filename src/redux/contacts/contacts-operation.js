@@ -49,12 +49,10 @@ export const addContact = createAsyncThunk(
   {
     condition: (data, { getState }) => {
       const { contacts } = getState();
-      console.log('data', data);
       const result = isDublicate(data, contacts.items);
-      console.log('result', result);
       if (result) {
         Notify.warning(
-          `This name ${data.name} or number ${data.number} is alredy exist`
+          `This name "${data.name}" or number "${data.number}" is alredy exist`
         );
         return false;
       }

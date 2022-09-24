@@ -19,7 +19,6 @@ export const NavLinkStyle = styled(NavLink)`
   font-size: 14px;
   margin-left: 10px;
   &.active {
-    font-weight: bold;
     color: #fffdfd;
     padding: 4px;
     border-radius: 4px;
