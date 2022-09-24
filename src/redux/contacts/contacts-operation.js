@@ -28,10 +28,10 @@ const isDublicate = ({ name, number }, contacts) => {
 
   const result = contacts?.find(item => {
     return (
-      normalizedName === item?.name.toLowerCase() && number === item?.number
+      normalizedName === item?.name.toLowerCase() ||
+      number === item?.number.toLowerCase()
     );
   });
-  console.log('result', result);
 
   return Boolean(result);
 };
@@ -53,7 +53,9 @@ export const addContact = createAsyncThunk(
       const result = isDublicate(data, contacts.items);
       console.log('result', result);
       if (result) {
-        Notify.warning(`${data.name} ${data.number} is alredy exist`);
+        Notify.warning(
+          `This name ${data.name} or number ${data.number} is alredy exist`
+        );
         return false;
       }
     },
