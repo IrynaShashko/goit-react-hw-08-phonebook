@@ -44,6 +44,7 @@ const LoginForm = ({ onSubmit }) => {
           size="small"
           margin="normal"
           autoComplete="current-password"
+          aria-label="toggle password visibility"
           fullWidth
           required
         />

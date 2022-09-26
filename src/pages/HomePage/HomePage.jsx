@@ -1,11 +1,17 @@
-import bg from '../../images/telefon-makro-fon-3.jpg';
-import { H1 } from '../HomePage/HomePage.styled';
+import bg from '../../images/telefon-makro-fon.jpg';
+import { Container, H1 } from '../HomePage/HomePage.styled';
 
 const HomePage = () => {
   return (
     <main>
-      <H1>Welcome to online PHONEBOOK!</H1>
-      <img src={bg} alt="phone" width="100%" />
+      <Container>
+        <div>
+          <H1>Welcome to online PHONEBOOK!</H1>
+        </div>
+        <div>
+          <img src={bg} alt="phone" width="100%" />
+        </div>
+      </Container>
     </main>
   );
 };

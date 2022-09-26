@@ -5,9 +5,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: none;
   border-bottom: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
+  box-shadow: 6px 25px 26px -22px;
+
   @media screen and (min-width: 767px) {
     font-size: 20px;
     padding: 12px;
