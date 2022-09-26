@@ -9,8 +9,7 @@ export const Container = styled.div`
   border-bottom: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
-  box-shadow: 6px 25px 26px -22px;
-
+  box-shadow: 0px 24px 16px -15px rgba(66, 68, 90, 1);
   @media screen and (min-width: 767px) {
     font-size: 20px;
     padding: 12px;

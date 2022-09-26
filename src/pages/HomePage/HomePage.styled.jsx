@@ -6,13 +6,25 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  padding: 30px;
+  padding: 50px;
   margin: 0 auto;
   @media screen and (min-width: 767px) {
     flex-direction: row;
   }
+  gap: 20px;
+`;
+
+export const ImgContainer = styled.div`
+  width: 250px;
+  @media screen and (min-width: 468px) {
+    width: 350px;
+  }
+  @media screen and (min-width: 767px) {
+    width: 550px;
+  }
 
   @media screen and (min-width: 920px) {
+    width: 650px;
   }
 `;
 
